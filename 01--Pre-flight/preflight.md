@@ -7,6 +7,8 @@ Prerequisites for the Pentaho Server 9.3 machine:
 * Docker Compose
 * Harbor
 
+<font color='teal'>This section is for reference only. The tasks have already been completed.</font>
+
 ---
 
 <em>Install Docker, Docker-Compose & Harbor</em>  
@@ -110,8 +112,6 @@ Note: it will pull the latest
 ---
 
 <em>Configure HTTPS connection</em>
-
-<font color='teal'>This section is for reference only.</font>
 
 In a production environment, you should obtain a certificate from a CA. In a test or development environment, you can generate your own CA. To generate a CA certficate, run the following commands.
 
