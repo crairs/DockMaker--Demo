@@ -1,4 +1,4 @@
-## DockMaker
+## <font color='red'>DockMaker</font>
 
 As part of customers cloud journey many of the services used and connected as part of defined ETL workflows are present and managed by the cloud (such as storage buckets, relational & analytical databases, messaging systems, etc.).
 It means Pentaho is required to:
@@ -9,14 +9,19 @@ Hitachi Vantara doesn’t provide an out of the box container image mainly becau
 
 DockMaker is a command line tool used to create containers for Pentaho products:
 * Pentaho Server
+  - Analyzer
+  - Interactive Reports
+  - Dashboards
 * Carte server
 * Pentaho Data Integration
+
+* Repository
 
 #### <font color='red'>Module 01 - Pre-flight</font>
 * Docker
 * Docker-Compose
 * Harbor 
-* Pentaho EE 9.3 software
+* Pentaho EE 9.3 binaries
 
 #### <font color='red'>Module 02 - Pentaho Containers</font>
 * DockMaker
