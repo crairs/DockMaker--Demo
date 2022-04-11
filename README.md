@@ -15,7 +15,7 @@ DockMaker is a command line tool used to create containers for Pentaho products:
 * Carte server
 * Pentaho Data Integration
 
-* Repository
+* Pentaho Repository
 
 #### <font color='red'>Module 01 - Pre-flight</font>
 * Docker

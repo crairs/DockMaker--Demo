@@ -31,7 +31,7 @@ This is the address at which you access the Harbor interface and the registry se
 
 When the script reports Harbor Installation Complete, log in to your new Harbor instance.
 
-  > browse to: http://harbor.skytap.example
+  > browse to: http://pentaho.skytap.example
 
 User name: admin  
 Password: Harbor12345  
@@ -49,7 +49,7 @@ Once logged in, you should be able to create new projects, pull and push images 
 ``log in to Harbor with CLI:``
 ```
 cd harbor
-docker login harbor.skytap.example
+docker pentaho.skytap.example
 Username: admin
 Password: Harbor12345
 ```
@@ -87,11 +87,11 @@ docker run busybox echo "hello from busybox"
 ```
 ``tag the image:``
 ```
-docker tag busybox:latest harbor.skytap.example/busybox:latest
+docker tag busybox:latest pentaho.skytap.example/busybox:latest
 ```
 ``push to harbor:``
 ```
-docker push harbor.skytap.example/busybox/busybox:latest
+docker push pentaho.skytap.example/busybox/busybox:latest
 ```
 * Log back into Harbor -> Projects -> Busybox .. 
 
@@ -99,13 +99,13 @@ Let's now see if the image can be pulled.
 
 ``remove busybox/busybox:latest container:``
 ```
-docker image rm harbor.skytap.example/busybox/busybox:latest
+docker image rm pentaho.skytap.example/busybox/busybox:latest
 ```
 or
 use the Harbor UI..
 ``pull image from Harbor:``
 ```
-docker pull harbor.skytap.example/busybox/busybox
+docker pull pentaho.skytap.example/busybox/busybox
 ```
 Note: it will pull the latest
 
@@ -128,7 +128,7 @@ openssl req \
     -subj "/CN=localhost/C=<Country>/ST=<State>/L=<Location>/O=<Organization>"
 ```
 ```
-openssl req -newkey rsa:4096 -nodes -sha256 -keyout harbor.skytap.example.key -x509 -days 365 -out harbor.skytap.example.crt -subj "/CN=harbor.skytap.example/C=UK/ST=London/L=London/O=HitachiVantara"
+openssl req -newkey rsa:4096 -nodes -sha256 -keyout pentaho.skytap.example.key -x509 -days 365 -out pentaho.skytap.example.crt -subj "/CN=pentaho.skytap.example/C=UK/ST=London/L=London/O=HitachiVantara"
 ```
 ``configure the Harbor Installer - harbor.yml:``
 hostname — set this to either the IP address or the domain of your hosting server.
@@ -136,7 +136,7 @@ harbor_admin_password — set this to a strong, unique password.
 
 ``edit the paths of the keys to reflect as shown in below example:``
 ```
-hostname: harbor.skytap.example
+hostname: pentaho.skytap.example
 # http related config
 http:
 # port for http, default is 80. If https enabled, this port will redirect to https port
@@ -146,8 +146,8 @@ https:
 # https port for harbor, default is 443
 port: 443
 # The path of cert and key files for nginx
-certificate: /etc/ssl/harbor.skytap.example.crt
-private_key: /etc/ssl/harbor.skytap.example.key
+certificate: /etc/ssl/pentaho.skytap.example.crt
+private_key: /etc/ssl/pentaho.skytap.example.key
 ```
 
 
