@@ -17,6 +17,8 @@ Set the PENTAHO_INSTALLED_LICENSE_PATH variable so that when you start Pentaho, 
 
 <font color='red'>If you do not set the variables, Pentaho will not start correctly.</font>
 
+<font color='teal'>This section is for reference only. The license is located at: /data/license</font>
+
 ``open a terminal window and log in as root:``
 ```
 sudo -i
@@ -46,7 +48,7 @@ DockMaker is a command line tool used to create containers for Pentaho products:
 * Carte server
 * Pentaho Data Integration
 
-<font color='teal'>DockMaker has been downloaded and copied to ~/dockmaker-9.3.0.0</font>
+<font color='teal'>DockMaker has been downloaded and copied to ~/dock-maker-9.3.0.0</font>
 
 Install the package by completing these steps.
 
@@ -58,9 +60,9 @@ cd dock-maker-9.3.0.0
 Note: a console window will appear.
 ``accept license:``
 
-``edit the installation path:``
+``edit the installation path to:``
 ```
-/home/pentaho/dock-maker-9.3.0.0-427-public
+/home/pentaho/dock-maker-9.3.0.0
 ```
 Note: The Installation Progress window appears. Progress bars indicate the status of the installation. When the installation progress is complete, click Quit to exit the Unpack Wizard.
 
@@ -81,7 +83,7 @@ the following commands will display the required commands but not execute:
 
 ``build Pentaho Server EE 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-427-public
+cd dock-maker-9.3.0.0
 ./DockMaker.sh -V 9.3.0.0/427/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
 ```
 Note: if you wish to automate the build add the flag: -X
