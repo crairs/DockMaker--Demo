@@ -34,6 +34,6 @@ DockMaker is a command line tool used to create containers for Pentaho products:
 
 | Artifact                   | Date     |  
 | ---------------------------| ---------| 
-| Released                   |          | 
+| Released                   | 04/05/22 | 
 |                            |          |               
 |
