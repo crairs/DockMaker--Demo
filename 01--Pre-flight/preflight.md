@@ -150,5 +150,4 @@ certificate: /etc/ssl/pentaho.skytap.example.crt
 private_key: /etc/ssl/pentaho.skytap.example.key
 ```
 
-
 ---
