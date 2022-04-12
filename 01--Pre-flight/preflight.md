@@ -7,18 +7,18 @@ Prerequisites for the Pentaho Server 9.3 machine:
 * Docker Compose
 * Harbor
 
-<font color='teal'>This section is for reference only. The tasks have already been completed.</font>
+<font color='teal'>This section is for reference only. These tasks have already been completed.</font>
 
 ---
 
 <em>Install Docker, Docker-Compose & Harbor</em>  
 
-The Harbor community has provided a script that with a single command prepares an Ubuntu 20.04 machine for Harbor and deploys the latest stable version.  
+The following script prepares an Ubuntu 20.04 machine for Containers - including Harbor and Chartmuseum.  
 This script installs Harbor with an HTTP connection, Clair, and the Chart Repository Service. It does not install Notary, which requires HTTPS.  
 
 ``run the script:``
 ```
-sudo ./harbor.sh
+sudo ./pre-requisites.sh
 ```
 Select whether to deploy Harbor using the IP address or FQDN of the host machine.
 
@@ -36,7 +36,7 @@ When the script reports Harbor Installation Complete, log in to your new Harbor 
 User name: admin  
 Password: Harbor12345  
 
-After deployment, you can enable HTTPS and Notary by reconfiguring the installation. 
+If you wish to enable HTTPS and Notary: 
 
   > for further details: https://goharbor.io/docs/2.0.0/install-config/configure-https/
 
@@ -107,47 +107,6 @@ use the Harbor UI..
 ```
 docker pull pentaho.skytap.example/busybox/busybox
 ```
-Note: it will pull the latest
-
----
-
-<em>Configure HTTPS connection</em>
-
-In a production environment, you should obtain a certificate from a CA. In a test or development environment, you can generate your own CA. To generate a CA certficate, run the following commands.
-
-``generate a CA certificate private key:``
-```
-openssl genrsa -out ca.key 4096
-```
-``enter cert details:``
-```
-#Syntax to generate cert and key: 
-openssl req \
-    -newkey rsa:4096 -nodes -sha256 -keyout domain.key \
-    -x509 -days 365 -out domain.crt \
-    -subj "/CN=localhost/C=<Country>/ST=<State>/L=<Location>/O=<Organization>"
-```
-```
-openssl req -newkey rsa:4096 -nodes -sha256 -keyout pentaho.skytap.example.key -x509 -days 365 -out pentaho.skytap.example.crt -subj "/CN=pentaho.skytap.example/C=UK/ST=London/L=London/O=HitachiVantara"
-```
-``configure the Harbor Installer - harbor.yml:``
-hostname — set this to either the IP address or the domain of your hosting server.
-harbor_admin_password — set this to a strong, unique password.
-
-``edit the paths of the keys to reflect as shown in below example:``
-```
-hostname: pentaho.skytap.example
-# http related config
-http:
-# port for http, default is 80. If https enabled, this port will redirect to https port
-port: 80
-# https related config
-https:
-# https port for harbor, default is 443
-port: 443
-# The path of cert and key files for nginx
-certificate: /etc/ssl/pentaho.skytap.example.crt
-private_key: /etc/ssl/pentaho.skytap.example.key
-```
+Note: it will pull the latest image.
 
 ---
