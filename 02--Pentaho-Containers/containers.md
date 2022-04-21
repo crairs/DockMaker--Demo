@@ -133,7 +133,7 @@ Note: When executed with -X, the container will be built and a test.ktr transfor
 cd dock-maker-9.3.0.0-428
 ./DockMaker.sh -T carte -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
 ```
-user: cluster
+user: cluster  
 password: cluster
 
 ---
