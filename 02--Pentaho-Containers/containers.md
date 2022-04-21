@@ -11,7 +11,9 @@ Prerequisites for DockMaker:
 
 ---
 
-<em>Pentaho EE License</em> 
+<em>Pentaho EE License</em>
+
+<font color='teal'>This section is for reference only. The license has been generated and  is located at: /data/license</font>
 
 To install or update license files, from the command line, follow the steps below:  
 ``* Download the .lic file(s) you want to install.``  
@@ -27,7 +29,7 @@ Run install_license.sh with the install switch and the location and name of your
 Windows:  
 Run install_license.bat with the install switch and the location and name of your license file as a parameter. Be sure to use quotation marks (") to escape any spaces in the path or file name.
 ```
-install_license.bat install "C:\Users\username\Downloads\Pentaho BI Platform Enterprise Edition.lic"
+install_license.bat install "C:\dock-maker-9.3.0.0-428\license-installer"\Pentaho BI Platform Enterprise Edition.lic"
 ```
 ``* Repeat the previous step for all needed licenses.``
  
@@ -35,7 +37,7 @@ Set the PENTAHO_INSTALLED_LICENSE_PATH variable so that when you start Pentaho, 
 
 <font color='red'>If you do not set the variables, Pentaho will not start correctly.</font>
 
-<font color='teal'>This section is for reference only. The license is located at: /data/license</font>
+
 
 ``open a terminal window and log in as root:``
 ```
