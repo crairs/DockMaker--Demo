@@ -106,7 +106,7 @@ the following commands will display the required commands but not execute:
 cd dock-maker-9.3.0.0-428
 ./DockMaker.sh -V 9.3.0.0/428/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
 ```
-Note: if you wish to automate the build add the flag: -X
+Note: if you wish to automate the build and deploy add the flag: -X
 
   > log into the server: http://localhost:8081/pentaho/Login 
   
