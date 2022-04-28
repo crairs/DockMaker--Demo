@@ -103,7 +103,7 @@ the following commands will display the required commands but not execute:
 
 ``build Pentaho Server EE 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-428
+cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
 ./DockMaker.sh -V 9.3.0.0/428/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
 ```
 Note: if you wish to automate the build and deploy add the flag: -X
@@ -123,14 +123,14 @@ docker compose -f generatedFiles/docker-compose.yml start
 
 ``build Pentaho Data Integration 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-428
+cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
 ./DockMaker.sh -T pdi -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
 ```
 Note: When executed with -X, the container will be built and a test.ktr transformation will be run on the container.  
 
 ``build a Carte server 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-428
+cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
 ./DockMaker.sh -T carte -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
 ```
 user: cluster  
