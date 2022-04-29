@@ -37,8 +37,6 @@ Set the PENTAHO_INSTALLED_LICENSE_PATH variable so that when you start Pentaho, 
 
 <font color='red'>If you do not set the variables, Pentaho will not start correctly.</font>
 
-
-
 ``open a terminal window and log in as root:``
 ```
 sudo -i
@@ -103,13 +101,8 @@ the following commands will display the required commands but not execute:
 
 ``build Pentaho Server EE 9.3.0.0:``
 ```
-<<<<<<< Updated upstream
-cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
-./DockMaker.sh -V 9.3.0.0/428/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
-=======
 cd dock-maker-9.3.0.0-433
 ./DockMaker.sh -V 9.3.0.0/433/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
->>>>>>> Stashed changes
 ```
 Note: if you wish to automate the build and deploy add the flag: -X
 
@@ -128,25 +121,15 @@ docker compose -f generatedFiles/docker-compose.yml start
 
 ``build Pentaho Data Integration 9.3.0.0:``
 ```
-<<<<<<< Updated upstream
-cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
-./DockMaker.sh -T pdi -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
-=======
 cd dock-maker-9.3.0.0-433
 ./DockMaker.sh -T pdi -V 9.3.0.0/433/ee -U --EULA_ACCEPT=true
->>>>>>> Stashed changes
 ```
 Note: When executed with -X, the container will be built and a test.ktr transformation will be run on the container.  
 
 ``build a Carte server 9.3.0.0:``
 ```
-<<<<<<< Updated upstream
-cd dock-maker-9.3.0.0-428/dock-maker-9.3.0.0-428
-./DockMaker.sh -T carte -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
-=======
 cd dock-maker-9.3.0.0-433
 ./DockMaker.sh -T carte -V 9.3.0.0/433/ee -U --EULA_ACCEPT=true
->>>>>>> Stashed changes
 ```
 user: cluster  
 password: cluster
