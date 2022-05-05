@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ==============================================================
-# Harbor on Ubuntu 20.04
+# SkyTap Lab - DockMaker on Ubuntu 20.04
 # Edit your /etc/hosts file to resolve IP and FQDN. 
 # Pre-requisite steps: disable swap
 #                      disable firewall (demo only)
