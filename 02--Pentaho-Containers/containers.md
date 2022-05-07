@@ -96,10 +96,9 @@ DockMaker directories:
 * <font color='teal'>generatedFiles:</font> This folder is created when the command line tool is executed.  It contains all the file necessary to create a docker image and use docker compose to bring up the containers.
 * <font color='teal'>lib:</font> Dependent libraries.
 
-To build Pentaho EE 9.3.0.0-433 container:
-the following commands will display the required commands but not execute:
+To build Pentaho EE 9.3.0.0-433 containers:
 
-``build Pentaho Server EE 9.3.0.0:``
+``build Pentaho Server EE 9.3.0.0:433``
 ```
 cd dock-maker-9.3.0.0-433
 ./DockMaker.sh -V 9.3.0.0/433/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
@@ -117,6 +116,15 @@ docker compose -f generatedFiles/docker-compose.yml stop
 ``restart containers:``
 ```
 docker compose -f generatedFiles/docker-compose.yml start
+```
+
+---
+
+``build Pentaho Data Integration 9.3.0.0:``
+```
+```
+cd dock-maker-9.3.0.0-433
+./DockMaker.sh -V 9.3.0.0/433/ee -A -p  -U --EULA_ACCEPT=true
 ```
 
 ``build Pentaho Data Integration 9.3.0.0:``
