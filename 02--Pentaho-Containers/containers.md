@@ -44,7 +44,7 @@ sudo -i
 ``edit /etc/environment file:``
 ```
 cd /etc/environment
-nano  /etc/environment
+nano /etc/environment
 ```
 ``add the following:``
 ```
