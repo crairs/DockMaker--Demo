@@ -124,23 +124,19 @@ docker compose -f generatedFiles/docker-compose.yml start
 
 <em>Pentaho EE 9.3.0.0-428 PDI / Carte Containers</em>
 
-``build Pentaho Data Integration 9.3.0.0:``
-```
-cd dock-maker-9.3.0.0-428
-./DockMaker.sh -V 9.3.0.0/428/ee -A -p  -U --EULA_ACCEPT=true
-```
+
 
 ``build Pentaho Data Integration 9.3.0.0:``
 ```
 cd dock-maker-9.3.0.0-428
-./DockMaker.sh -T pdi -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
+./DockMaker.sh -V 9.3.0.0/428/ee -T pdi -p 8082 -U --EULA_ACCEPT=true
 ```
 Note: When executed with -X, the container will be built and a test.ktr transformation will be run on the container.  
 
 ``build a Carte server 9.3.0.0:``
 ```
 cd dock-maker-9.3.0.0-428
-./DockMaker.sh -T carte -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
+./DockMaker.sh -V 9.3.0.0/428/ee -T carte -p 8083 -U --EULA_ACCEPT=true
 ```
 user: cluster  
 password: cluster
