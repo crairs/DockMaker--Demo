@@ -29,7 +29,7 @@ Run install_license.sh with the install switch and the location and name of your
 Windows:  
 Run install_license.bat with the install switch and the location and name of your license file as a parameter. Be sure to use quotation marks (") to escape any spaces in the path or file name.
 ```
-install_license.bat install "C:\dock-maker-9.3.0.0-433\license-installer"\Pentaho BI Platform Enterprise Edition.lic"
+install_license.bat install "C:\dock-maker-9.3.0.0-428\license-installer"\Pentaho BI Platform Enterprise Edition.lic"
 ```
 ``* Repeat the previous step for all needed licenses.``
  
@@ -62,9 +62,9 @@ env | grep PENTAHO_INSTALLED_LICENSE_PATH
 <em>Install DockMaker</em>  
 
 DockMaker is a command line tool used to create containers for Pentaho products:
-* Pentaho Server
-* Carte server
+* Pentaho Server BA/DI
 * Pentaho Data Integration
+* Carte server
 
 <font color='teal'>DockMaker has been downloaded and copied to ~/dock-maker-9.3.0.0</font>
 
@@ -96,12 +96,14 @@ DockMaker directories:
 * <font color='teal'>generatedFiles:</font> This folder is created when the command line tool is executed.  It contains all the file necessary to create a docker image and use docker compose to bring up the containers.
 * <font color='teal'>lib:</font> Dependent libraries.
 
-To build Pentaho EE 9.3.0.0-433 containers:
+---
 
-``build Pentaho Server EE 9.3.0.0:433``
+<em>Pentaho EE 9.3.0.0-428 BA / DI Containers</em>
+
+``build Pentaho Server EE 9.3.0.0:428:``
 ```
-cd dock-maker-9.3.0.0-433
-./DockMaker.sh -V 9.3.0.0/433/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
+cd dock-maker-9.3.0.0-428
+./DockMaker.sh -V 9.3.0.0/428/ee -A paz,pdd,pir -U --EULA_ACCEPT=true
 ```
 Note: if you wish to automate the build and deploy add the flag: -X
 
@@ -120,24 +122,25 @@ docker compose -f generatedFiles/docker-compose.yml start
 
 ---
 
+<em>Pentaho EE 9.3.0.0-428 PDI / Carte Containers</em>
+
 ``build Pentaho Data Integration 9.3.0.0:``
 ```
-```
-cd dock-maker-9.3.0.0-433
-./DockMaker.sh -V 9.3.0.0/433/ee -A -p  -U --EULA_ACCEPT=true
+cd dock-maker-9.3.0.0-428
+./DockMaker.sh -V 9.3.0.0/428/ee -A -p  -U --EULA_ACCEPT=true
 ```
 
 ``build Pentaho Data Integration 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-433
-./DockMaker.sh -T pdi -V 9.3.0.0/433/ee -U --EULA_ACCEPT=true
+cd dock-maker-9.3.0.0-428
+./DockMaker.sh -T pdi -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
 ```
 Note: When executed with -X, the container will be built and a test.ktr transformation will be run on the container.  
 
 ``build a Carte server 9.3.0.0:``
 ```
-cd dock-maker-9.3.0.0-433
-./DockMaker.sh -T carte -V 9.3.0.0/433/ee -U --EULA_ACCEPT=true
+cd dock-maker-9.3.0.0-428
+./DockMaker.sh -T carte -V 9.3.0.0/428/ee -U --EULA_ACCEPT=true
 ```
 user: cluster  
 password: cluster
