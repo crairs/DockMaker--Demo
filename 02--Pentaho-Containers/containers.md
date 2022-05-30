@@ -124,6 +124,23 @@ docker compose -f generatedFiles/docker-compose.yml start
 
 <em>Pentaho EE 9.3.0.0-428 PDI / Carte Containers</em>
 
+The DockMaker command tool supports three different volumes used by the containers:
+
+Override Files Volume
+The Override Volume contains all the changes that must be made to the basic artifact files to create the configuration desired.  This volume binds the generatedFiles\fileOverride folder on the host with the /docker-entrypoint-init folder on the container.  When the container is started, the files present in this folder will overwrite the files/folders in the /opt/pentaho/data-integration or /opt/pentaho/pentaho-server folder, obviously depending on the Type of container.  
+If you need any additional files, drivers, etc to be placed in the application’s folder just declare the proper path, in the fileOverride folder.
+Be aware, however, any changes made here will be lost if the command tool is ever executed again.  That is why the command line normally gives you the docker commands without executing them.  In many cases the user will need to make more changes to the templates provided.  If you want to make sure you do not lose the files that were generated, (or manually changed), rename the generatedFiles folder to something else, or copy the folder entirely to another place.  It will still work though some paths may have to be adjusted in the commands listed in this document.
+
+Metastore Volume
+This volume is provided by the user of tool by including the -M or –metastore parameter.  It is intended to allow the user to create a bi-directional bind on a metastore folder.  It binds the folder defined in the -M parameter with the /home/pentaho folder on the container.  You probably don’t want to link it directly to your own metastore because that breaks the container contract of not changing host environment, but you can make a copy of your metastore and bind to that.  To do this, perform the following steps:
+1.	Create an arbitrary folder on your host file system to serve as the shared folder.  We’ll use d:\metastore which demonstrates Windows drive usage as well.
+2.	Copy the “.kettle” and “.pentaho” folders from your home folder to the “d:/metastore” folder, or whatever names you used.  This is enough to share the metastore.
+3.	Copy any other files you need to process your use case.  The d:/metastore folder will be bound to the /home/pentaho folder on the container.
+4.	When you generate the files with DockMaker command, it should contain “-M d:/metastore”.
+
+Database Volume
+The database volume is only created when a Pentaho Server container is run.  This volume contains all the database tables associated with the server repository, quartz scheduler, and log tables.  When the database container is started for the first time, it will run DDL provided in generatedFiles that will define and possibly populate the tables needed.  The container’s form is essentially dictated by the database provider and is included here for completeness.
+
 
 
 ``build Pentaho Data Integration 9.3.0.0:``
