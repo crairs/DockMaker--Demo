@@ -8,7 +8,7 @@ It means Pentaho is required to:
 Hitachi Vantara doesn’t provide an out of the box container image mainly because we believe that each customer and each deployment has specific needs. Our approach is to provide this workshop as a guide for your very specific Pentaho on Kubernetes journey.
 
 DockMaker is a command line tool used to create containers for Pentaho products:
-* Pentaho Server
+* Pentaho Server BA
   - Analyzer
   - Interactive Reports
   - Dashboards
